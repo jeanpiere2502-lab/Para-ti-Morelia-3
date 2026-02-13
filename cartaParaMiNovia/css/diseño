@@ -1,0 +1,22 @@
+.pantalla {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  width: 100%;
+}
+
+.texto {
+  max-width: 500px;
+  margin: 0 auto;
+  line-height: 1.8;
+  font-size: 18px;
+}
+.foto-romantica {
+  width: 200px;       /* ajusta si quieres */
+  max-width: 80%;
+  border-radius: 15px;
+  margin: 15px 0;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.3);
+}

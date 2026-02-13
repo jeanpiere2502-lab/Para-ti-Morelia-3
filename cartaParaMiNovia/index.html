@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<title>Nuestro Universo 💖</title>
+
+<style>
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background: linear-gradient(135deg, #ff4da6, #ff99cc);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  color: white;
+  overflow: hidden;
+}
+
+.pantalla {
+  display: none;
+  text-align: center;
+  width: 100%;
+  animation: aparecer 0.8s ease;
+}
+
+.activa {
+  display: block;
+}
+
+@keyframes aparecer {
+  from { opacity: 0; transform: scale(0.95); }
+  to { opacity: 1; transform: scale(1); }
+}
+
+.container {
+  background: rgba(255,255,255,0.15);
+  padding: 40px;
+  border-radius: 20px;
+  width: 400px;
+  margin: auto;
+}
+
+input {
+  padding: 10px;
+  border-radius: 10px;
+  border: none;
+  width: 80%;
+}
+
+button {
+  padding: 10px 20px;
+  margin: 8px;
+  border: none;
+  border-radius: 10px;
+  background: white;
+  color: #ff4da6;
+  font-weight: bold;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+button:hover {
+  transform: scale(1.1);
+}
+
+img {
+  width: 250px;
+  border-radius: 20px;
+  margin-top: 20px;
+  box-shadow: 0px 10px 25px rgba(0,0,0,0.4);
+  transition: 0.5s;
+}
+
+img:hover {
+  transform: scale(1.05);
+}
+</style>
+</head>
+
+<body>
+
+<!-- PANTALLA 1 -->
+<div id="login" class="pantalla activa">
+  <div class="container">
+    <h1>🔒 Acceso Privado</h1>
+    <p>Ingresa la contraseña</p>
+    <input type="password" id="password" placeholder="Contraseña">
+    <br><br>
+    <button onclick="verificar()">Entrar</button>
+  </div>
+</div>
+
+<!-- PANTALLA PRINCIPAL -->
+<div id="principal" class="pantalla">
+  <h1>Bienvenida Amor 💕</h1>
+  <img src="fotos/foto1.png" alt="Nuestra Foto">
+  <p>Elige uno de estas ociones :3.</p>
+  <p>💖Te kello mucho amorchito💖.</p>
+
+  <br>
+  <button onclick="ir('pagina1')">💖 Lo que siento por ti</button>
+  <button onclick="ir('pagina2')">🌎 Nuestro futuro</button>
+<button onclick="ir('extra')">💭 Recuerda esto</button>
+  <button onclick="ir('hot')">🔥 Hot</button>
+</div>
+
+<div id="pagina1" class="pantalla">
+  <h1>❤️</h1>
+
+<img src="fotos/foto3.png" alt="Nuestra foto" class="foto-romantica">
+
+  <p class="texto">
+    No eres solo mi novia…  
+    eres mi paz en medio del caos,  
+    mi sonrisa en los días grises  
+    y mi lugar seguro cuando todo parece incierto.  
+
+    <br><br>
+
+    Contigo aprendí que el amor no solo se siente,  
+    se vive en cada detalle,  
+    en cada mirada sincera  
+    y en cada abrazo que calma el alma.  
+
+    <br><br>
+
+    Eres mi coincidencia favorita  
+    y, si la vida me diera otra oportunidad,  
+    te elegiría una y mil veces más 💕
+  </p>
+
+  <button onclick="ir('principal')">Volver</button>
+</div>
+
+<!-- PÁGINA 2 -->
+<div id="pagina2" class="pantalla">
+  <h1>Nuestro futuro 🌟</h1>
+
+  <img src="fotos/foto4.png" alt="Nuestro futuro" class="foto-romantica">
+
+  <p class="texto">
+    Me gustaría estar a tu lado,  
+    compartir la vida contigo sin prisas,  
+    llevarte a comer todo lo que te haga feliz  
+    y cumplir nuestras metas caminando de la mano.  
+
+    <br><br>
+
+    Reírnos, soñar, apoyarnos en todo,  
+    y seguir construyendo este amor  
+    con pequeños momentos  
+    y muchas cosas más.
+  </p>
+
+  <button onclick="ir('principal')">Volver</button>
+</div>
+
+
+<!-- PÁGINA EXTRA -->
+<div id="extra" class="pantalla">
+  <h1>✨ Recuerda, amor</h1>
+
+  <img src="fotos/foto5.png" alt="Para ti" class="foto-romantica">
+
+  <p class="texto">
+    Amor, recuerda que siempre te voy a amar.  
+    Aquí estoy, esperándote con ilusión,  
+    emocionado por cada mensaje tuyo.  
+
+    <br><br>
+
+    Gracias por todo lo que eres  
+    y por lo que compartimos.  
+    Yo siempre estaré a tu lado,  
+    porque te amo con todo mi corazón.
+  </p>
+
+  <button onclick="ir('principal')">Volver</button>
+</div>
+
+<!-- PÁGINA HOT -->
+<div id="hot" class="pantalla" style="background: linear-gradient(135deg, #8b0000, #ff0000); height:100vh;">
+  <h1>🔥 Modo Hot Activado</h1>
+
+  <img src="fotos/foto2.png" alt="Modo Hot">
+
+<p style="font-size:20px; margin-top:20px; text-align:center;">
+  Esto no es de diosito amor 😏
+</p>
+
+<p style="font-size:20px; text-align:center;">
+  pervertida jsjsjsj
+</p>
+
+<p style="font-size:20px; text-align:center;">
+  Me da una fotito :3
+</p>
+  <button onclick="ir('principal')">Volver antes que nos juzguen 😭</button>
+</div>
+
+<script>
+function verificar() {
+  var pass = document.getElementById("password").value;
+  if(pass === "amor") {
+    ir("principal");
+  } else {
+    alert("Contraseña incorrecta 😢");
+  }
+}
+
+function ir(pantalla) {
+  var pantallas = document.getElementsByClassName("pantalla");
+  for(var i = 0; i < pantallas.length; i++) {
+    pantallas[i].classList.remove("activa");
+  }
+  document.getElementById(pantalla).classList.add("activa");
+}
+</script>
+
+</body>
+</html>
